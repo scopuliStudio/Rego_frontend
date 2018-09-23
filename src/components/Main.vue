@@ -5,7 +5,6 @@
       <h2 class='rego'>REGO</h2>
       <h2 class='front-end-developer'>Front End Developer</h2>
       </div>
-
       <div class="nav-links">
         <ul>
           <li>Home</li>
