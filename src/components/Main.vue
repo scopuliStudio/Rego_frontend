@@ -1,8 +1,20 @@
 <template>
-    <div>
+    <div class="rego-container">
+      <div class="nav">
+      <div class="title-container">
       <h2 class='rego'>REGO</h2>
       <h2 class='front-end-developer'>Front End Developer</h2>
-      <hr style="clear:both;"/>
+      </div>
+
+      <div class="nav-links">
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+      </div>
+<!--       <hr style="clear:both;"/> -->
       <div>
         <a v-on:click="runReddit()">Articles</a>
         <a v-on:click='runAskhn()'>Discussions</a>
@@ -89,17 +101,31 @@ export default {
 };
 </script>
 <style>
+html {
+  background-color: #FCFCFC;
+  font-family: "Muli", sans-serif;
+  font-size: 16px;
+}
+.rego-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
 img {
   width: 200px;
 }
+
+.title-container {
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
 .rego {
-  margin-right: 10%;
+  margin-right: 25px;
   display: inline;
-  height: 60px;
-  width: 136px;
-  color: #000000;
-  font-family: Muli !important;
-  font-size: 48px;
+  color: #101010;
+  font-family: "Muli", sans-serif;
+  font-size: 2.5em;
   font-weight: 600;
   letter-spacing: 0.2px;
   line-height: 60px;
@@ -107,12 +133,11 @@ img {
 }
 .front-end-developer {
   display: inline;
-  height: 60px;
-  width: 581px;
+  text-transform: uppercase;
   opacity: 0.76;
   color: #8c8c8c;
-  font-family: Muli;
-  font-size: 48px;
+  font-family: "Muli", sans-serif;
+  font-size: 2.5em;
   font-weight: 600;
   letter-spacing: 0.2px;
   line-height: 60px;
