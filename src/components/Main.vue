@@ -95,7 +95,8 @@ export default {
         that.askhn_list = response.data.hits;
         console.log(that.askhn_list);
       });
-    }
+    },
+  
   }
 };
 </script>
