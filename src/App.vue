@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <LandingPage />
-    <!-- <Main /> -->
+    <!-- <LandingPage /> -->
+    <Main />
   </div>
 </template>
 

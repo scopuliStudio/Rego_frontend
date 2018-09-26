@@ -96,6 +96,9 @@ export default {
         console.log(that.askhn_list);
       });
     },
+    runPeople: function(){
+      
+    }
   
   }
 };
