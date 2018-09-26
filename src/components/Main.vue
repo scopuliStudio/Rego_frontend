@@ -124,6 +124,7 @@ html {
   font-family: "Muli", sans-serif;
   font-size: 16px;
 }
+
 .rego-container {
   width: 90%;
   margin: 0 auto;
