@@ -13,7 +13,6 @@
         </ul>
       </div>
       </div>
-<!--       <hr style="clear:both;"/> -->
       <div>
         <el-input placeholder="What to search for" v-model="input_value"></el-input>
         <a v-on:click="runReddit()">Articles</a>
