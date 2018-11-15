@@ -6,13 +6,13 @@
 </template>
 
 <script>
-import Main from './components/Main.vue'
+import Main from './components/Dashboard.vue'
 import LandingPage from './components/LandingPage.vue'
 
 export default {
   name: 'app',
   components: {
-    Main,
+    Dashboard,
     LandingPage,
   }
 }
