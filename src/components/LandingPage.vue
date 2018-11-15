@@ -11,6 +11,10 @@
   
 </style>
 
+
+
+
+
 <script>
 import Navbar from '../components/navigation.vue'
 export default {
