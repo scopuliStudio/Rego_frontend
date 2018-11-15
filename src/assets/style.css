@@ -1,7 +1,51 @@
+/* ========================= GENERAL TAGS ======================== */
+
+
 html, body {
     background-color: #ffffff;
     font-size: 16px;
     font-family: "Muli", sans-serif;
     font-weight: 600;
     
+}
+
+.custom-nav {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+.custom-navbar {
+    margin-right: 120px;
+}
+.brand-title {
+    line-height: 65px;
+    font-size: 2.7rem;
+    color: #000000;
+    margin-left: 1rem;
+  }
+
+/* ========================= Layout ======================== */
+
+
+
+
+
+
+
+
+
+
+
+  /* ========================= Media Queries ======================== */
+
+@media (min-width: 576px) {
+
+}
+@media (min-width: 768px) {
+
+}
+@media (min-width: 1024px) {
+
+}
+@media (min-width: 1400px) {
+
 }

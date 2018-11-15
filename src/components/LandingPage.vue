@@ -1,29 +1,38 @@
 <template>
-    <div clas> <!-- this is body-->
-<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div> <!-- this is body-->
+<nav class="navbar custom-nav" role="navigation" aria-label="main navigation">
   <div class="navbar-brand brand-title">
-      REGO
+    <a href="#" class="navbar-item">REGO</a>
+    <span class="navbar-burger burger" data-target="navMenu">
+      <span></span> 
+      <span></span> 
+      <span></span> 
+    </span>
   </div>
-  <div class="navbar-menu">
-    <!-- navbar start, navbar end -->
-  </div>
-</nav>
-</div>
+  <div id="navMenu" class="navbar-menu">
+    <div class="navbar-end">
+      <a href="#" class="navbar-item is-active">Home</a>
+       <a href="#" class="navbar-item">About</a>
+        <a href="#" class="navbar-item">Contact</a>
+    </div>
+    </div>
 
-    
+
+
+
+</nav>
+</div>   
 </template>
 
 <style>
-    .brand-title {
-      line-height: 65px;
-      font-size: 2.8125rem;
-    }
+  
 
 </style>
 <script>
 export default {
+   
   created(){
-    test:{
+    test: {
       document.addEventListener('DOMContentLoaded', () => {
 
   // Get all "navbar-burger" elements
@@ -49,8 +58,8 @@ export default {
   }
 
 });
-      
     }
   }
+
 }
 </script>
