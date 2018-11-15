@@ -16,6 +16,7 @@
 <style>
     .brand-title {
       line-height: 65px;
+      font-size: 2.8125rem;
     }
 
 </style>
