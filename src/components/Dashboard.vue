@@ -1,72 +1,17 @@
 <template>
     <div class="rego-container">
-      <div class="nav">
-      <div class="title-container">
-      <h2 class='rego'>REGO</h2>
-      <h2 class='front-end-developer'>Front End Developer</h2>
-      </div>
-      <div class="nav-links">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-        </ul>
-      </div>
-      </div>
-      <div>
-        <el-input placeholder="What to search for" v-model="input_value"></el-input>
-        <a v-on:click="runReddit()">Articles</a>
-        <a v-on:click='runAskhn()'>Discussions</a>
-        <a >People</a>
-      </div>
-      <div>
-        <el-row :gutter='20' v-if='reddit_list'>
-          <el-col :span='8' v-for="item in reddit_list">
-            <a :href="item.url">
-            <el-card :body-style="{ padding: '0px' }">
-              <img src='https://media.wired.com/photos/5a55a95af41e4c2cd9ee6cd8/191:100/pass/Medium-logo-canvas.jpg'>
-              <div style="padding: 14px;">
-                <span>{{item.title}}</span>
-                <span>{{item.fulllink}}</span>
-                <h3>By {{item.author}}</h3>
-                <div class="bottom clearfix">
-                  <el-button disabled type="text" class="button">Link</el-button>
-              </div>
-            </div>
-            </el-card>
-            <div>
-              
-            </div>
-            </a>
-          </el-col>
-        </el-row>
-        <el-row :gutter='20' v-if='askhn_list'>
-          <el-col :span='8' v-for="item in askhn_list">
-            <a :href="item.url">
-            <el-card :body-style="{ padding: '0px' }">
-              <img src='https://media.wired.com/photos/5a55a95af41e4c2cd9ee6cd8/191:100/pass/Medium-logo-canvas.jpg'>
-              <div style="padding: 14px;">
-                <span>{{item.title}}</span>
-                <span>{{item.fulllink}}</span>
-                <h3>By {{item.author}}</h3>
-                <div class="bottom clearfix">
-                  <el-button disabled type="text" class="button">Link</el-button>
-              </div>
-            </div>
-            </el-card>
-            <div>
-              
-            </div>
-            </a>
-          </el-col>
-        </el-row>
-      </div>
+      <navbar />
     </div>
 </template>
 
 <script>
+import Navbar from '../components/navigation.vue'
 import axios from "axios";
+
 export default {
+  components: {
+    Navbar,
+  },
   data: function() {
     return {
       reddit_list: [],
