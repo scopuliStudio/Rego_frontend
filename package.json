@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "test": "echo \"Error: no test specified\"",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "element-ui": "^2.4.7",
+    "bulma": "^0.7.2",
     "vue": "^2.5.17"
   },
   "devDependencies": {

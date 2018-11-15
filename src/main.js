@@ -1,10 +1,7 @@
 import Vue from 'vue';
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/reset.css'
-import 'element-ui/lib/theme-chalk/index.css';
 import App from './App.vue';
-
-Vue.use(ElementUI);
+import './../node_modules/bulma/css/bulma.css';
+import './assets/style.css'
 
 new Vue({
   el: '#app',

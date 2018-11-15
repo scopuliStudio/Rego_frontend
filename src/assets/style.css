@@ -1,0 +1,66 @@
+/* ========================= GENERAL TAGS ======================== */
+
+
+html, body {
+    background-color: #ffffff;
+    font-size: 16px;
+    font-family: "Muli", sans-serif;
+    font-weight: 600;
+    
+}
+
+.custom-nav {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.brand-title {
+    line-height: auto;
+    font-size: 1.5rem;
+    color: #000000;
+    margin-left: 1rem;
+  }
+
+/* ========================= Layout ======================== */
+
+
+
+
+
+
+
+
+
+
+
+  /* ========================= Media Queries ======================== */
+
+@media (min-width: 576px) {
+
+}
+@media (min-width: 768px) {
+
+}
+@media (min-width: 1024px) {
+    .brand-title {
+        font-size: 2.7rem;
+        margin-left: 4rem;
+        font-style: normal;
+font-weight: 600;
+    }
+    .custom-navbar {
+        margin-right: 9rem;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 20px;
+        letter-spacing: 1%;
+        color: #000000;
+        font-style: normal;
+    }
+    .custom-navitem {
+        margin-right: 25px;
+    }
+}
+@media (min-width: 1400px) {
+
+}
