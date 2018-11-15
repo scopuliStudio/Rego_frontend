@@ -9,10 +9,10 @@
       <span></span> 
     </span>
   </div>
-  <div id="navMenu" class="navbar-menu">
+  <div id="navMenu" class="navbar-menu custom-navbar">
     <div class="navbar-end">
-      <a href="#" class="navbar-item is-active">Home</a>
-       <a href="#" class="navbar-item">About</a>
+      <a href="#" class="navbar-item is-active custom-navitem">Home</a>
+       <a href="#" class="navbar-item custom-navitem">About</a>
         <a href="#" class="navbar-item">Contact</a>
     </div>
     </div>

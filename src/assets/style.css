@@ -13,12 +13,10 @@ html, body {
     padding-top: 2rem;
     padding-bottom: 1rem;
 }
-.custom-navbar {
-    margin-right: 120px;
-}
+
 .brand-title {
-    line-height: 65px;
-    font-size: 2.7rem;
+    line-height: auto;
+    font-size: 1.5rem;
     color: #000000;
     margin-left: 1rem;
   }
@@ -44,7 +42,24 @@ html, body {
 
 }
 @media (min-width: 1024px) {
-
+    .brand-title {
+        font-size: 2.7rem;
+        margin-left: 4rem;
+        font-style: normal;
+font-weight: 600;
+    }
+    .custom-navbar {
+        margin-right: 9.5rem;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 20px;
+        letter-spacing: 1%;
+        color: #000000;
+        font-style: normal;
+    }
+    .custom-navitem {
+        margin-right: 25px;
+    }
 }
 @media (min-width: 1400px) {
 
