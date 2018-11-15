@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <!-- <LandingPage /> -->
+    <LandingPage />
     <Main />
   </div>
 </template>

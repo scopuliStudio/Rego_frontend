@@ -22,4 +22,4 @@ yarn-error.log*
 
 # local changes from App.vue
 
-App.vue
+/App.vue
