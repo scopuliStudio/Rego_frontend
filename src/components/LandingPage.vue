@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div> <!-- this is body -->
         <img src='../assets/bgr.png'>
     </div>
 </template>
