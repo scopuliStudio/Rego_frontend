@@ -14,10 +14,11 @@
 </template>
 
 <style>
-
+    .brand-title {
+      line-height: 65px;
+    }
 
 </style>
-
 <script>
 export default {
   created(){
