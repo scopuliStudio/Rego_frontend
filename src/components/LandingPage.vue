@@ -1,6 +1,6 @@
 <template>
     <div clas> <!-- this is body jkcidshfhjdb-->
-        <img src='../assets/bgr.png'>
+    <h2>asdasd</h2>
     </div>
 </template>
 
