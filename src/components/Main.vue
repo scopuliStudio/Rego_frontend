@@ -14,7 +14,10 @@
       </div>
       </div>
       <div>
+<<<<<<< HEAD
         <el-input placeholder="What to search for" v-model="input_value"></el-input>
+=======
+>>>>>>> Made articles and discussions
         <a v-on:click="runReddit()">Articles</a>
         <a v-on:click='runAskhn()'>Discussions</a>
         <a >People</a>
@@ -81,7 +84,11 @@ export default {
       let that = this;
       that.askhn_list = []
       axios
+<<<<<<< HEAD
       .get("https://api.pushshift.io/reddit/search/submission/?q=" + that.input_value)
+=======
+      .get("https://api.pushshift.io/reddit/search/submission/?q=javascript")
+>>>>>>> Made articles and discussions
       .then(response => {
         that.reddit_list = response.data.data;
       });
@@ -90,16 +97,24 @@ export default {
       let that = this;
       that.reddit_list = [];
       axios
+<<<<<<< HEAD
       .get("http://hn.algolia.com/api/v1/search?query=" + that.input_value + "&tags=story")
+=======
+      .get("http://hn.algolia.com/api/v1/search?query=vuejs&tags=story")
+>>>>>>> Made articles and discussions
       .then(response => {
         that.askhn_list = response.data.hits;
         console.log(that.askhn_list);
       });
+<<<<<<< HEAD
     },
     runPeople: function(){
       
     }
   
+=======
+    }
+>>>>>>> Made articles and discussions
   }
 };
 </script>
