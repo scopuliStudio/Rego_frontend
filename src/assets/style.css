@@ -8,7 +8,9 @@ html, body {
     font-weight: 600;
     
 }
-
+.container {
+    width: 80%;
+}
 .custom-nav {
     padding-top: 2rem;
     padding-bottom: 1rem;
@@ -20,14 +22,37 @@ html, body {
     color: #000000;
     margin-left: 1rem;
   }
+  .landing-banner {
+      display: none;
+  }
 
-/* ========================= Layout ======================== */
+/* ========================= Custom Styling ======================== */
+.hero-container {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    text-align: center;
+}
+.hero-text {
+  font-size: 1.5rem;
+  line-height: normal;
+  color: #000000;
+  font-weight: 600;
+}
 
-
-
-
-
-
+  .start-btn {
+    background: linear-gradient(125.64deg, #6C63FF -35.62%, #432E99 111.67%);
+    box-shadow: 0px 4px 20px rgba(82, 52, 199, 0.25);
+    color: white;
+    width: 145px;
+    height: 50px;
+    border-radius: 69px;
+    margin-top: 35px;
+    font-size: 0.8rem;
+    text-align: center;
+    font-weight: 500;
+    font-style: normal;
+    cursor: pointer;
+  }
 
 
 
@@ -49,7 +74,7 @@ html, body {
 font-weight: 600;
     }
     .custom-navbar {
-        margin-right: 9rem;
+        margin-right: 6.5rem;
         font-size: 16px;
         font-weight: 600;
         line-height: 20px;
@@ -60,6 +85,49 @@ font-weight: 600;
     .custom-navitem {
         margin-right: 25px;
     }
+    .navbar {
+        background-color: unset;
+    }
+    .navbar-burger {
+        background-color: white;
+    }
+    .landing-banner {
+        display: inherit;
+        position: absolute;
+        z-index: 29;
+        left: 582px;
+        top: -78px;
+        width: 1317px;
+        height: 977px;
+    }
+    .hero-container {
+        padding-top: 10rem;
+        padding-bottom: 10rem;
+        text-align: unset;
+    }
+    .hero-text {
+        font-size: 2.375rem;
+      }
+      .break-text {
+          display: block;
+      }
+    .start-btn {
+        background: linear-gradient(125.64deg, #6C63FF -35.62%, #432E99 111.67%);
+        box-shadow: 0px 4px 20px rgba(82, 52, 199, 0.25);
+        color: white;
+        width: 275px;
+        height: 75px;
+        border-radius: 69px;
+        margin-top: 35px;
+        font-size: 1.5rem;
+        text-align: center;
+        font-weight: 500;
+        font-style: normal;
+        letter-spacing: 0.4px;
+        cursor: pointer;
+      }
+
+
 }
 @media (min-width: 1400px) {
 
