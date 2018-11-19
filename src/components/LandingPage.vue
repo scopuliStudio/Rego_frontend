@@ -7,10 +7,10 @@
     </div>
     <div class="container">
       <div class="hero-container">
-        <h1 class="hero-text">The way to discover great content <span class="break-text">you were looking for</span></h1>
+        <h1 class="hero-text">The way to discover great <span class="anim-typewriter" data-wait="1000" data-words='["articles", "podcasts", "people"]'></span> <span class="break-text"> you were looking for</span></h1>
         <button class="start-btn">
-            Get Started
-          </button>
+                    Get Started
+                  </button>
       </div>
       <section class="section-features">
         <div class="columns level">
@@ -38,63 +38,63 @@
         </div>
       </section>
     </div>
-
+  
     <section class="connected-sources">
       <div class="container">
         <div class="sources-intro">
           <h4 class="sources-title">Current Sources</h4>
           <p>We are working on adding more and more sources</p>
         </div>
-          <div class="columns">
-            <div class="column is-one-third" style="margin-top: 45px;">
-              <div class="source-container">
-                <img class="source-img" src="../assets/reddit.svg" alt="Reddit">
-              </div>
-              <p class="source-p">Find discussions from Reddit</p>
+        <div class="columns">
+          <div class="column is-one-third" style="margin-top: 45px;">
+            <div class="source-container">
+              <img class="source-img" src="../assets/reddit.svg" alt="Reddit">
             </div>
-            <div class="column is-one-third" style="margin-top: 45px;">
-              <div class="source-container">
-                <img class="source-img" src="../assets/twitter.svg" alt="Twitter">
-              </div>
-              <p class="source-p">Get quick new from Twitter</p>
-            </div>
-            <div class="column is-one-third" style="margin-top: 45px;">
-              <div class="source-container">
-                <img class="source-img" src="../assets/medium.svg" alt="Medium">
-              </div>
-              <p class="source-p">Read articles from Medium</p>
-            </div>
+            <p class="source-p">Find discussions from Reddit</p>
           </div>
-
+          <div class="column is-one-third" style="margin-top: 45px;">
+            <div class="source-container">
+              <img class="source-img" src="../assets/twitter.svg" alt="Twitter">
+            </div>
+            <p class="source-p">Get quick news from Twitter</p>
+          </div>
+          <div class="column is-one-third" style="margin-top: 45px;">
+            <div class="source-container">
+              <img class="source-img" src="../assets/medium.svg" alt="Medium">
+            </div>
+            <p class="source-p">Read articles from Medium</p>
+          </div>
+        </div>
+  
       </div>
     </section>
     <section class="repeat-start">
-     <div class="container">
-      <div class="footer-start">
-          <h3 class="footer-title"><span>Read</span> latest <span>Articles</span></h3>
+      <div class="container">
+        <div class="footer-start">
+          <h3 class="footer-title">Get latest content</h3>
           <button class="start-btn" id="v2-btn">
-          Start
-          </button>
-      </div>
+                  Start
+                  </button>
+        </div>
       </div>
     </section>
     <footer>
       <div class="container">
-          <div class="columns level">
-            <div class="column is-half">
-              <div class="footer-logo">
-                REGO
-              </div>
-            </div>
-            <div class="column is-half" >
-                <ul class="footer-navbar">
-                  <li><a href="#" class="footer-navitem">Home</a></li>
-                   <li><a href="#" class="footer-navitem">About</a></li>
-                    <li><a href="#" class="footer-navitem">Contact</a></li>
-                     <li><a href="#" style="color: #4a4a4a">© Copyright 2018</a></li>
-                </ul>
+        <div class="columns level">
+          <div class="column is-half">
+            <div class="footer-logo">
+              REGO
             </div>
           </div>
+          <div class="column is-half">
+            <ul class="footer-navbar">
+              <li><a href="#" class="footer-navitem" id="mobile-nav">Home</a></li>
+              <li><a href="#" class="footer-navitem" id="mobile-nav">About</a></li>
+              <li><a href="#" class="footer-navitem" id="mobile-nav">Contact</a></li>
+              <li><a href="#" style="color: #4a4a4a" id="mobile-nav">© Copyright 2018</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </footer>
   </div>
@@ -106,12 +106,85 @@
 </style>
 
 <script>
+  const AnimWriter = function(txtElement, words, wait = 1000) {
+    this.txtElement = txtElement;
+    this.words = words;
+    this.txt = '';
+    this.wordIndex = 0;
+    this.wait = parseInt(wait, 10);
+    this.type();
+    this.isDeleting = false;
+  
+  }
+  // Type Method
+  AnimWriter.prototype.type = function() {
+  
+    //   console.log("Hello World");
+  
+    // Curren index of words
+    const current = this.wordIndex % this.words.length;
+  
+    //  console.log(current);
+  
+    // Get full text of current word
+    const fullTxt = this.words[current];
+    console.log(fullTxt);
+  
+  
+    // Check if deleting
+    if (this.isDeleting) {
+      // Remove char
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+      // Add char
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+  
+    this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+  
+    // Type Speed
+    let typeSpeed = 300;
+    if (this.isDeleting) {
+      typeSpeed /= 2;
+    }
+  
+  
+    // if words is complete 
+    if (!this.isDeleting && this.txt === fullTxt) {
+      // Make pause at the End
+      typeSpeed = this.wait;
+      // Set delete to True
+      this.isDeleting = true;
+    } 
+    else if(this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        // Move to the next word
+        this.wordIndex++;
+        // Pause before start typing
+        typeSpeed = 500;
+    }  
+
+    setTimeout(() => this.type(), typeSpeed)
+  }
+  
+  // Init on DOM Load
+  
+  document.addEventListener("DOMContentLoaded", init);
+  // Init App
+  
+  function init() {
+    const txtElement = document.querySelector('.anim-typewriter');
+    const words = JSON.parse(txtElement.getAttribute('data-words'));
+    const wait = txtElement.getAttribute('data-wait');
+    new AnimWriter(txtElement, words, wait);
+  }
+  
+  
   import Navbar from '../components/navigation.vue'
   export default {
     components: {
       Navbar,
     }
-
   
   }
 </script>

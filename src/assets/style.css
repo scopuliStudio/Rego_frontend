@@ -40,7 +40,8 @@ html, body {
 }
 
   .start-btn {
-    background: linear-gradient(125.64deg, #6C63FF -35.62%, #432E99 111.67%);
+    /* background: linear-gradient(125.64deg, #6C63FF -35.62%, #432E99 111.67%); */
+    background-color: #534aff;
     box-shadow: 0px 4px 20px rgba(82, 52, 199, 0.25);
     color: white;
     width: 145px;
@@ -149,10 +150,22 @@ font-size: 2.375rem;
     margin-right: 45px;
     align-self: flex-end;
 }
+
+
+
 #v2-btn {
     width: 225px;
         height: 70px;
         font-size: 1.8rem;
+}
+.anim-typewriter {
+    color: #432E99;
+}
+
+/* Cursor for Animation */
+.anim-typewriter > .txt {
+    border-right: 0.2rem solid #2d1f68;
+
 }
 
   /* ========================= Media Queries ======================== */
@@ -217,7 +230,8 @@ font-weight: 600;
           display: block;
       }
     .start-btn {
-        background: linear-gradient(125.64deg, #6C63FF -35.62%, #432E99 111.67%);
+       /*  background: linear-gradient(125.64deg, #6C63FF -35.62%, #432E99 111.67%); */
+        background-color: #534aff;
         box-shadow: 0px 4px 20px rgba(82, 52, 199, 0.25);
         color: white;
         width: 275px;
