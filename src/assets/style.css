@@ -118,7 +118,8 @@ html, body {
     font-size: 2.375rem;
 }
 .repeat-start {
-    padding-top: 10rem;
+    padding-top: 9rem;
+    padding-bottom: 2rem;
     text-align: center;
 }
 .footer-title {
@@ -146,7 +147,12 @@ font-size: 2.375rem;
 .footer-navitem {
     color: #4a4a4a;
     margin-right: 45px;
-   
+    align-self: flex-end;
+}
+#v2-btn {
+    width: 225px;
+        height: 70px;
+        font-size: 1.8rem;
 }
 
   /* ========================= Media Queries ======================== */

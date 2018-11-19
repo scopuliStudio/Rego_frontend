@@ -72,7 +72,7 @@
      <div class="container">
       <div class="footer-start">
           <h3 class="footer-title"><span>Read</span> latest <span>Articles</span></h3>
-          <button class="start-btn">
+          <button class="start-btn" id="v2-btn">
           Start
           </button>
       </div>
@@ -80,7 +80,7 @@
     </section>
     <footer>
       <div class="container">
-          <div class="columns">
+          <div class="columns level">
             <div class="column is-half">
               <div class="footer-logo">
                 REGO
@@ -91,7 +91,7 @@
                   <li><a href="#" class="footer-navitem">Home</a></li>
                    <li><a href="#" class="footer-navitem">About</a></li>
                     <li><a href="#" class="footer-navitem">Contact</a></li>
-                     <li><a href="#" class="footer-navitem" style="color: #4a4a4a">© Copyright 2018</a></li>
+                     <li><a href="#" style="color: #4a4a4a">© Copyright 2018</a></li>
                 </ul>
             </div>
           </div>
@@ -111,6 +111,7 @@
     components: {
       Navbar,
     }
+
   
   }
 </script>
