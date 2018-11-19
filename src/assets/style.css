@@ -8,7 +8,9 @@ html, body {
     font-weight: 600;
     
 }
-
+.container {
+    width: 95%;
+}
 .custom-nav {
     padding-top: 2rem;
     padding-bottom: 1rem;
@@ -20,18 +22,152 @@ html, body {
     color: #000000;
     margin-left: 1rem;
   }
+  .landing-banner {
+      display: none;
+  }
 
-/* ========================= Layout ======================== */
+/* ========================= Custom Styling ======================== */
+.hero-container {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    text-align: center;
+}
+.hero-text {
+  font-size: 1.5rem;
+  line-height: normal;
+  color: #000000;
+  font-weight: 600;
+}
+
+  .start-btn {
+    /* background: linear-gradient(125.64deg, #6C63FF -35.62%, #432E99 111.67%); */
+    background-color: #534aff;
+    box-shadow: 0px 4px 20px rgba(82, 52, 199, 0.25);
+    color: white;
+    width: 145px;
+    height: 50px;
+    border-radius: 100px;
+    margin-top: 35px;
+    font-size: 0.8rem;
+    text-align: center;
+    font-weight: 500;
+    font-style: normal;
+    cursor: pointer;
+    border: none;
+  }
+  .section-features {
+      padding-top: 2rem;
+      padding-bottom: 3rem;
+      text-align: center;
+  }
+.feature-block {
+    margin-top: 30px;
+}
+  .feature-img {
+      width: 85%;
+      height: auto;
+  }
+  .feature-h3 {
+      color: #000000;
+      margin-top: 3rem;
+      font-style: normal;
+      font-weight: 600;
+     line-height: normal;
+    font-size: 20px;
+  }
+  .feature-p {
+      margin-top: 10px;
+  }
+.connected-sources {
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    text-align: center;
+    background-color: #432E99;
+    /* box-shadow:0 8px 80px 0 rgba(71, 71, 71, 0.8) ; */
+    box-shadow: 10px 8px 80px rgba(71, 71, 71, 0.7);
+}
+
+.source-img {
+    width: 19%;
+    height: auto;
+}
+.source-container {
+    background-color: #ffffff;
+    box-shadow: 0px 7px 30px rgba(0, 0, 0, 0.09);
+    border-radius: 40px;
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem;
+    max-width: 210px;
+    margin: 0 auto;
+}
+.source-p {
+    margin-top: 30px;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+.sources-intro {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+.sources-intro p {
+    color: white;
+    font-size: 1.4rem;
+    opacity: 0.65;
+}
+.sources-title {
+    color: white;
+    font-weight: 600;
+    font-size: 2.375rem;
+}
+.repeat-start {
+    padding-top: 9rem;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+.footer-title {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #000000;
+}
+
+footer {
+    padding-top: 7rem;
+    padding-bottom: 3rem;
+}
+.footer-logo {
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+font-size: 2.375rem;
+}
+.footer-navbar {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.footer-navitem {
+    color: #4a4a4a;
+    margin-right: 45px;
+    align-self: flex-end;
+}
 
 
 
+#v2-btn {
+    width: 225px;
+        height: 70px;
+        font-size: 1.8rem;
+}
+.anim-typewriter {
+    color: #432E99;
+}
 
+/* Cursor for Animation */
+.anim-typewriter > .txt {
+    border-right: 0.2rem solid #2d1f68;
 
-
-
-
-
-
+}
 
   /* ========================= Media Queries ======================== */
 
@@ -49,7 +185,7 @@ html, body {
 font-weight: 600;
     }
     .custom-navbar {
-        margin-right: 9rem;
+        margin-right: 6.5rem;
         font-size: 16px;
         font-weight: 600;
         line-height: 20px;
@@ -60,6 +196,81 @@ font-weight: 600;
     .custom-navitem {
         margin-right: 25px;
     }
+    .navbar {
+        background-color: unset;
+    }
+    .navbar-burger {
+        background-color: white;
+    }
+    .landing-banner {
+        display: inherit;
+        position: absolute;
+        z-index: 29;
+        left: 582px;
+        top: -78px;
+        width: 1317px;
+        height: 977px;
+    }
+    .articles-banner { 
+        position: absolute;
+        width: 1077.87px;
+        height: 813.02px;
+        left: -402px;
+        top: 989px;
+        opacity: 1;
+    }
+    .hero-container {
+        padding-top: 10rem;
+        padding-bottom: 10rem;
+        text-align: unset;
+    }
+    .hero-text {
+        font-size: 2.375rem;
+      }
+      .break-text {
+          display: block;
+      }
+    .start-btn {
+       /*  background: linear-gradient(125.64deg, #6C63FF -35.62%, #432E99 111.67%); */
+        background-color: #534aff;
+        box-shadow: 0px 4px 20px rgba(82, 52, 199, 0.25);
+        color: white;
+        width: 275px;
+        height: 75px;
+        border-radius: 100px;
+        margin-top: 35px;
+        font-size: 1.5rem;
+        text-align: center;
+        font-weight: 500;
+        font-style: normal;
+        letter-spacing: 0.4px;
+        cursor: pointer;
+      }
+
+      .section-features {
+          padding-top: 23rem;
+          padding-bottom: 10rem;
+      }
+      .feature-block {
+          text-align: left;
+          box-shadow:0 15px 45px rgba(38,41,121,0.1);
+          border-radius: 10px;
+          padding-top: 6rem;
+          padding-bottom: 5rem;
+          padding-left: 2rem;
+          padding-right: 2rem;
+          text-align: center;
+          min-height: 500px;
+      }
+      .connected-sources {
+          padding-top: 5rem;
+          padding-bottom: 8rem;
+      }
+      .footer-navbar {
+          flex-direction: row;
+      }
+    
+
 }
 @media (min-width: 1400px) {
 
