@@ -9,7 +9,7 @@ html, body {
     
 }
 .container {
-    width: 80%;
+    width: 95%;
 }
 .custom-nav {
     padding-top: 2rem;
@@ -53,8 +53,29 @@ html, body {
     font-style: normal;
     cursor: pointer;
   }
-
-
+  .section-features {
+      padding-top: 2rem;
+      padding-bottom: 3rem;
+      text-align: center;
+  }
+.feature-block {
+    margin-top: 30px;
+}
+  .feature-img {
+      width: 85%;
+      height: auto;
+  }
+  .feature-h3 {
+      color: #000000;
+      margin-top: 3rem;
+      font-style: normal;
+      font-weight: 600;
+     line-height: normal;
+    font-size: 20px;
+  }
+  .feature-p {
+      margin-top: 10px;
+  }
 
 
 
@@ -100,6 +121,14 @@ font-weight: 600;
         width: 1317px;
         height: 977px;
     }
+    .articles-banner { 
+        position: absolute;
+        width: 1077.87px;
+        height: 813.02px;
+        left: -402px;
+        top: 989px;
+        opacity: 1;
+    }
     .hero-container {
         padding-top: 10rem;
         padding-bottom: 10rem;
@@ -127,6 +156,21 @@ font-weight: 600;
         cursor: pointer;
       }
 
+      .section-features {
+          padding-top: 23rem;
+      }
+      .feature-block {
+          text-align: left;
+          box-shadow:0 15px 45px rgba(38,41,121,0.1);
+          border-radius: 10px;
+          padding-top: 6rem;
+          padding-bottom: 5rem;
+          padding-left: 2rem;
+          padding-right: 2rem;
+          text-align: center;
+          min-height: 500px;
+      }
+    
 
 }
 @media (min-width: 1400px) {
