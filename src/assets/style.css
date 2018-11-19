@@ -46,7 +46,7 @@ html, body {
     color: white;
     width: 145px;
     height: 50px;
-    border-radius: 69px;
+    border-radius: 100px;
     margin-top: 35px;
     font-size: 0.8rem;
     text-align: center;
@@ -236,7 +236,7 @@ font-weight: 600;
         color: white;
         width: 275px;
         height: 75px;
-        border-radius: 69px;
+        border-radius: 100px;
         margin-top: 35px;
         font-size: 1.5rem;
         text-align: center;
