@@ -8,9 +8,9 @@
     <div class="container">
       <div class="hero-container">
         <h1 class="hero-text">The way to discover great <span class="anim-typewriter" data-wait="1000" data-words='["articles", "podcasts", "people"]'></span> <span class="break-text"> you were looking for</span></h1>
-        <button class="start-btn" @click="modal_launch">
-                                Get Started
-                              </button>
+        <button class="start-btn" @click="modal_launch" @keyup.esc='modal_close'>
+                                                            Get Started
+                                                          </button>
       </div>
       <section class="section-features">
         <div class="columns level">
@@ -68,14 +68,41 @@
         <div class="modal" v-bind:class="{'is-active':isActive}">
           <div class="modal-background"></div>
           <div class="modal-content">
-            <div class="box">
-  
-              <!-- Kod Modalki -->
-              <div class="content has-text-centered">
-                <p class="control">
-                  <h3>Piwi vse syuda</h3>
-                </p>
-                <span>&nbsp;</span>
+                          <!-- Kod Modalki -->
+            <div class="box" @keyup.esc='modal_close'>
+              <div>
+                <h2>Who are you</h2>
+              </div>
+              <div class='control'>
+                <div class="columns">
+                  <div class='column'>
+                    <label class="radio">
+                              <input type="radio" name="answer">
+                              Ux Ui Designer
+                            </label>
+                  </div>
+                  <div class='column'>
+                    <label class="radio">
+                              <input type="radio" name="answer">
+                              Back-end Developer
+                            </label>
+                  </div>
+                </div>
+                <div class='columns'>
+                  <div class="column">
+                    <label class="radio">
+                              <input type="radio" name="answer">
+                             Front-end Developer
+                            </label>
+                  </div>
+                  <div class="column">
+                    <label class="radio">
+                              <input type="radio" name="answer">
+                              IT enthusiast
+                            </label>
+                  </div>
+                </div>
+                <a class='button is-rounded is-danger is-focused'>Ok</a>
               </div>
             </div>
           </div>
@@ -87,9 +114,9 @@
       <div class="container">
         <div class="footer-start">
           <h3 class="footer-title">Get latest content</h3>
-          <button class="start-btn" id="v2-btn" @click="modal_launch">
-                              Start
-                              </button>
+          <button class="start-btn" id="v2-btn" @click="modal_launch" @keyup.esc='modal_close'>
+                                                          Start
+                                                          </button>
         </div>
       </div>
     </section>
