@@ -8,9 +8,9 @@
     <div class="container">
       <div class="hero-container">
         <h1 class="hero-text">The way to discover great <span class="anim-typewriter" data-wait="1000" data-words='["articles", "podcasts", "people"]'></span> <span class="break-text"> you were looking for</span></h1>
-        <button class="start-btn">
-                    Get Started
-                  </button>
+        <button class="start-btn" @click="modal_launch" @keyup.esc='modal_close'>
+                                                            Get Started
+                                                          </button>
       </div>
       <section class="section-features">
         <div class="columns level">
@@ -65,126 +65,158 @@
             <p class="source-p">Read articles from Medium</p>
           </div>
         </div>
-  
+        <div class="modal" v-bind:class="{'is-active':isActive}">
+          <div class="modal-background"></div>
+          <div class="modal-content">
+                          <!-- Kod Modalki -->
+            <div class="box" @keyup.esc='modal_close'>
+              <div>
+                <h2>Who are you</h2>
+              </div>
+              <div class='control'>
+                <div class="columns">
+                  <div class='column'>
+                    <label class="radio">
+                              <input type="radio" name="answer">
+                              Ux Ui Designer
+                            </label>
+                  </div>
+                  <div class='column'>
+                    <label class="radio">
+                              <input type="radio" name="answer">
+                              Back-end Developer
+                            </label>
+                  </div>
+                </div>
+                <div class='columns'>
+                  <div class="column">
+                    <label class="radio">
+                              <input type="radio" name="answer">
+                             Front-end Developer
+                            </label>
+                  </div>
+                  <div class="column">
+                    <label class="radio">
+                              <input type="radio" name="answer">
+                              IT enthusiast
+                            </label>
+                  </div>
+                </div>
+                <a class='button is-rounded is-danger is-focused'>Ok</a>
+              </div>
+            </div>
+          </div>
+          <button @click="modal_close" class="modal-close"></button>
+        </div>
       </div>
     </section>
     <section class="repeat-start">
       <div class="container">
         <div class="footer-start">
           <h3 class="footer-title">Get latest content</h3>
-          <button class="start-btn" id="v2-btn">
-                  Start
-                  </button>
+          <button class="start-btn" id="v2-btn" @click="modal_launch" @keyup.esc='modal_close'>
+                                                          Start
+                                                          </button>
         </div>
       </div>
     </section>
-    <footer>
-      <div class="container">
-        <div class="columns level">
-          <div class="column is-half">
-            <div class="footer-logo">
-              REGO
-            </div>
-          </div>
-          <div class="column is-half">
-            <ul class="footer-navbar">
-              <li><a href="#" class="footer-navitem" id="mobile-nav">Home</a></li>
-              <li><a href="#" class="footer-navitem" id="mobile-nav">About</a></li>
-              <li><a href="#" class="footer-navitem" id="mobile-nav">Contact</a></li>
-              <li><a href="#" style="color: #4a4a4a" id="mobile-nav">© Copyright 2018</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <Footer />
   </div>
   <!-- End Body -->
 </template>
 
-<style>
-  
-</style>
-
 <script>
-  const AnimWriter = function(txtElement, words, wait = 1000) {
-    this.txtElement = txtElement;
-    this.words = words;
-    this.txt = '';
-    this.wordIndex = 0;
-    this.wait = parseInt(wait, 10);
-    this.type();
-    this.isDeleting = false;
-  
-  }
-  // Type Method
-  AnimWriter.prototype.type = function() {
-  
-    //   console.log("Hello World");
-  
-    // Curren index of words
-    const current = this.wordIndex % this.words.length;
-  
-    //  console.log(current);
-  
-    // Get full text of current word
-    const fullTxt = this.words[current];
-    console.log(fullTxt);
-  
-  
-    // Check if deleting
-    if (this.isDeleting) {
-      // Remove char
-      this.txt = fullTxt.substring(0, this.txt.length - 1);
-    } else {
-      // Add char
-      this.txt = fullTxt.substring(0, this.txt.length + 1);
-    }
-  
-    this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
-  
-    // Type Speed
-    let typeSpeed = 300;
-    if (this.isDeleting) {
-      typeSpeed /= 2;
-    }
-  
-  
-    // if words is complete 
-    if (!this.isDeleting && this.txt === fullTxt) {
-      // Make pause at the End
-      typeSpeed = this.wait;
-      // Set delete to True
-      this.isDeleting = true;
-    } 
-    else if(this.isDeleting && this.txt === '') {
-        this.isDeleting = false;
-        // Move to the next word
-        this.wordIndex++;
-        // Pause before start typing
-        typeSpeed = 500;
-    }  
-
-    setTimeout(() => this.type(), typeSpeed)
-  }
-  
-  // Init on DOM Load
-  
-  document.addEventListener("DOMContentLoaded", init);
-  // Init App
-  
-  function init() {
-    const txtElement = document.querySelector('.anim-typewriter');
-    const words = JSON.parse(txtElement.getAttribute('data-words'));
-    const wait = txtElement.getAttribute('data-wait');
-    new AnimWriter(txtElement, words, wait);
-  }
-  
-  
   import Navbar from '../components/navigation.vue'
+  import Footer from '../components/footer.vue'
+  // import Modal from '../components/Modal.vue'
+  
+  
   export default {
     components: {
       Navbar,
-    }
+      Footer,
+      // Modal
+    },
+    data: function() {
+      return {
+        isActive: false
+      }
+    },
+    created: function() {
+      const AnimWriter = function(txtElement, words, wait = 1000) {
+        this.txtElement = txtElement;
+        this.words = words;
+        this.txt = '';
+        this.wordIndex = 0;
+        this.wait = parseInt(wait, 10);
+        this.type();
+        this.isDeleting = false;
+  
+      }
+      // Type Method
+      AnimWriter.prototype.type = function() {
+        // Curren index of words
+        const current = this.wordIndex % this.words.length;
+        // Get full text of current word
+        const fullTxt = this.words[current];
+  
+        // Check if deleting
+        if (this.isDeleting) {
+          // Remove char
+          this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+          // Add char
+          this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+  
+        this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+  
+        // Type Speed
+        let typeSpeed = 300;
+        if (this.isDeleting) {
+          typeSpeed /= 2;
+        }
+  
+  
+        // if words is complete 
+        if (!this.isDeleting && this.txt === fullTxt) {
+          // Make pause at the End
+          typeSpeed = this.wait;
+          // Set delete to True
+          this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+          this.isDeleting = false;
+          // Move to the next word
+          this.wordIndex++;
+          // Pause before start typing
+          typeSpeed = 500;
+        }
+  
+        setTimeout(() => this.type(), typeSpeed)
+      }
+  
+      // Init on DOM Load
+  
+      document.addEventListener("DOMContentLoaded", init);
+      // Init App
+  
+      function init() {
+        const txtElement = document.querySelector('.anim-typewriter');
+        const words = JSON.parse(txtElement.getAttribute('data-words'));
+        const wait = txtElement.getAttribute('data-wait');
+        new AnimWriter(txtElement, words, wait);
+      }
+  
+  
+    },
+    methods: {
+      modal_launch: function() {
+        this.isActive = true;
+      },
+      modal_close: function() {
+        this.isActive = false;
+      }
+    },
   
   }
 </script>
