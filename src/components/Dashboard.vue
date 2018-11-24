@@ -16,8 +16,8 @@
 <script>
 import Navbar from '../components/navigation.vue'
 import axios from "axios";
-
-export default {
+<div v-for='item in reddit_list' class='column'>
+export default {adding_dashboar
     components: {
         Navbar,
     },
