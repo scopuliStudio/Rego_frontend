@@ -19,7 +19,3 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
-
-# local changes from App.vue
-
-src/App.vue
