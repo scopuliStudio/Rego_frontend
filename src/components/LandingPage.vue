@@ -102,7 +102,7 @@
                             </label>
                   </div>
                 </div>
-                <a class='button is-rounded is-danger is-focused'>Ok</a>
+                <a class='button is-rounded is-danger is-focused submit'>Ok</a>
               </div>
             </div>
           </div>
