@@ -5,12 +5,22 @@
       <h2>{{response_name}}</h2>
       <h2>{{description}}</h2>
     </div>
-    <div class="columns is-mobile">
+    <div class="columns is-mobile reddit-list">
       <div class="column is-one-third" v-for="item in reddit_list">
         <div class="box">
           <h1>{{item.author}}</h1>
           <p>{{item.title}}</p>
         </div>
+      </div>
+    </div>
+    <div class='columns is-mobile reddit-list behance-list                                                                                                                                      '>
+      <div class="column is-one-third" v-for="item in behance_list">
+        <a v-bind:href="item.url">
+          <div class="box">
+            <img v-bind:src="item.covers[202]">
+            <p>{{item.name}}</p>
+          </div>
+        </a>
       </div>
     </div>
     <Footer />
@@ -32,12 +42,14 @@
         reddit_list: [],
         askhn_list: [],
         podcasts_list: [],
+        behance_list: [],
         response_name: "UI UX Desginer",
         description: "One stop resouce for everything"
       };
     },
     created() {
       this.runReddit();
+      this.runBehance()
     },
     methods: {
       runReddit: function() {
@@ -66,7 +78,23 @@
             console.log(that.askhn_list);
           });
       },
-      runPeople: function() {}
+      runBehance: function() {
+        let that = this;
+        that.behance_list = [];
+        axios
+          .get(
+            'https://api.behance.net/v2/projects?q=best&client_id=RgknN27mTTdenNCSHtY94iJ6DKWDv4mJ', {
+              headers: {
+                'content-type': 'application/x-www-form-urlencoded',
+                'crossDomain': true
+              }
+            }
+          )
+          .then(response => {
+            that.behance_list = response.data.projects
+            console.log(that.behance_list)
+          })
+      }
     }
   };
 </script>
